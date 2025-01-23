@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MélodieÀL-Infini", "MélodieÀL-Infini.csproj", "{778B88E7-1210-44D4-9221-67E38F57A8AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{778B88E7-1210-44D4-9221-67E38F57A8AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{778B88E7-1210-44D4-9221-67E38F57A8AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{778B88E7-1210-44D4-9221-67E38F57A8AA}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{778B88E7-1210-44D4-9221-67E38F57A8AA}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{778B88E7-1210-44D4-9221-67E38F57A8AA}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{778B88E7-1210-44D4-9221-67E38F57A8AA}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
