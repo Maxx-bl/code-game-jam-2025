@@ -41,5 +41,12 @@ public partial class Map : Node2D
 	{
 		float pitch = Mathf.Lerp(minPitch, maxPitch, Mathf.Clamp(gm.Score / 1000f, 0f, 1f));
 		mm.SetPitch(pitch);
+		if (p._collected)
+		{
+			var powerup = GD.Load<PackedScene>("res://scenes/powerup.tscn");
+			var powerupInstance = powerup.Instantiate();
+			AddChild(powerupInstance);
+			p._collected = false;
+		}
 	}
 }

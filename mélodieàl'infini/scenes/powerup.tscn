@@ -7,7 +7,6 @@
 size = Vector2(74, 75)
 
 [node name="powerup" type="StaticBody2D"]
-position = Vector2(0, -1)
 script = ExtResource("1_8qhir")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

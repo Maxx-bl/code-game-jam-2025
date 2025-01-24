@@ -5,10 +5,10 @@ public partial class MusicManager : Node
 {
 	private AudioStreamPlayer asp;
 
-    public override void _Ready()
-    {
+	public override void _Ready()
+	{
 		asp = GetNode<AudioStreamPlayer>("AudioStreamPlayer");	
-    }
+	}
 
 	public float GetPitch() {
 		return asp.PitchScale;

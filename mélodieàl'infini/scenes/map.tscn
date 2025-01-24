@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d1a6b4yn0mr7r" path="res://assets/infini.png" id="1_lqa26"]
 
 [node name="map" type="Node2D"]
-position = Vector2(960, 540)
+position = Vector2(-335, 502)
 script = ExtResource("1_c2q2k")
 
 [node name="background" type="Sprite2D" parent="."]
