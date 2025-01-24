@@ -48,6 +48,11 @@ public partial class Player : CharacterBody2D
 		}
 	}
 
+	public void powerUpHealth()
+	{
+		Hp++;
+	}
+
 	public override void _Process(double delta)
 	{
 		Vector2 velocity = new Vector2();
