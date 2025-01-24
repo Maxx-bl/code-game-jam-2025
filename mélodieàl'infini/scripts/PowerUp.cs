@@ -12,12 +12,10 @@ public partial class PowerUp : Node2D
 		_powerType = _rnd.Next(1, 5);
 	}
 
-	private void _on_body_entered(Node2D body)
+	private void _on_area_2d_body_entered(Node2D body)
 	{
-		QueueFree();
+		//QueueFree();
 		GD.Print(_powerType);
 	}
 }
-
-
 
