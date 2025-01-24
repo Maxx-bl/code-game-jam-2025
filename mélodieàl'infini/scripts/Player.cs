@@ -20,9 +20,16 @@ public partial class Player : CharacterBody2D
 	}
 
 	public override void _Input(InputEvent @event){
-		if (@event is InputEventMouseButton eventMouseClick){
+		if (@event is InputEventMouseMotion eventMouseMotion && _isMoving){
 			_targetPosition = GetGlobalMousePosition();
-			_isMoving = true;
+		}
+		
+		if (@event is InputEventMouseButton eventMouseClick && eventMouseClick.Pressed){
+		 	_targetPosition = GetGlobalMousePosition();
+		 	_isMoving = true;
+		}
+		else if (@event is InputEventMouseButton eventMouseClicke && !eventMouseClicke.Pressed){
+			_isMoving = false;
 		}
 	}
 
@@ -38,6 +45,11 @@ public partial class Player : CharacterBody2D
 				_isMoving = false;
 			}
 		}
+	}
+
+	public override void _Draw(){
+		DrawLine(Vector2.Zero, _targetPosition - Position, _drawColor, 2, true);
+		DrawCircle(_targetPosition - Position, 6, _drawColor);
 	}
 
 	public override void _Process(double delta){

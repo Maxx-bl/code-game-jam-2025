@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1tptrs4iwjgw"]
+[gd_scene load_steps=3 format=3 uid="uid://fyehy24uwbn7"]
 
 [ext_resource type="Script" path="res://scripts/Map.cs" id="1_c2q2k"]
 [ext_resource type="Texture2D" uid="uid://dwflulk1d01yt" path="res://assets/infini.png" id="1_lqa26"]
@@ -9,8 +9,7 @@ script = ExtResource("1_c2q2k")
 [node name="background" type="Sprite2D" parent="."]
 
 [node name="path" type="Sprite2D" parent="."]
-position = Vector2(912, 623)
-scale = Vector2(30, 30)
+scale = Vector2(5, 5)
 texture = ExtResource("1_lqa26")
 
 [node name="Area2D" type="Area2D" parent="path"]
