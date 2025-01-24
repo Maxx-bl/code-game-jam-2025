@@ -16,11 +16,10 @@ public partial class Enemy : CharacterBody2D
 	Vector2 ScreenSize;
 
 	public override void _Ready(){
-		// chose randomly if the enemy will be stupid or not
 		RandomNumberGenerator rng = new RandomNumberGenerator();
 		stupid = rng.RandiRange(0, 1) == 0;
 
-		player = GetParent().GetNode<CharacterBody2D>("Player");
+		player = GetParent().GetNode<CharacterBody2D>("player");
 
 
 		ScreenSize = GetViewportRect().Size;
