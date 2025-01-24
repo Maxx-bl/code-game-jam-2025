@@ -33,13 +33,13 @@ public partial class Map : Node2D
 
 		gm = GetNode<GameManager>("GameManager");
 
-		p = GetNode<Player>("Player");
+		p = GetNode<Player>("player");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		float pitch = Mathf.Lerp(minPitch, maxPitch, Mathf.Clamp(p.Speed / 7500f, 0f, 1f));  // Adjust the divisor to control sensitivity		mm.SetPitch(pitch);
+		float pitch = Mathf.Lerp(minPitch, maxPitch, Mathf.Clamp(p.Speed / 7500f, 0f, 1f));
 		mm.SetPitch(pitch);
 
 		elapsedTime += delta;

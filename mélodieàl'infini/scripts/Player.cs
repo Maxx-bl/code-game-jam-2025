@@ -11,6 +11,8 @@ public partial class Player : CharacterBody2D
 	public float Speed;
 	private double _timerCount;
 
+	public int Hp;
+
 	Vector2 ScreenSize;
 
 	public override void _Ready()
@@ -18,6 +20,7 @@ public partial class Player : CharacterBody2D
 		Speed = _defaultSpeed;
 		_targetPosition = Position;
 		ScreenSize = GetViewportRect().Size;
+		Hp = 1;
 	}
 
 	public override void _Input(InputEvent @event)
