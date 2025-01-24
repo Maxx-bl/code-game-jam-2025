@@ -14,7 +14,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(25, 0, 22, 1), Color(2.5, 0, 2.2, 1), Color(25, 0, 22, 1)]
+"values": [Color(50, 0, 22, 1), Color(2.5, 0, 2.2, 1), Color(25, 0, 22, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_6cex6"]
@@ -41,6 +41,8 @@ _data = {
 [sub_resource type="Environment" id="Environment_7kuee"]
 background_mode = 3
 glow_enabled = true
+glow_intensity = 2.0
+glow_strength = 0.5
 glow_blend_mode = 1
 
 [node name="Tutoriel" type="Node2D"]
