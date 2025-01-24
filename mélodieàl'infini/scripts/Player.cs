@@ -100,4 +100,13 @@ public partial class Player : CharacterBody2D
             }
         }
     }
+
+    public void CollideWithEnemy() {
+        if (Hp > 1) {
+            Hp--;
+            // Animation perte HP
+        } else {
+            // Game over
+        }
+    }
 }

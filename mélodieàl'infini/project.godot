@@ -22,6 +22,7 @@ project/assembly_name="MélodieÀL-Infini"
 [global_group]
 
 player=""
+enemy=""
 
 [input]
 

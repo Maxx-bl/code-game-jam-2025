@@ -5,6 +5,7 @@ using System.Diagnostics;
 public partial class Enemy : CharacterBody2D
 {
 	CharacterBody2D player = null;
+	Player pStats;
 
 	[Export] float speed = 200.0f;
 
@@ -20,13 +21,14 @@ public partial class Enemy : CharacterBody2D
 		stupid = rng.RandiRange(0, 1) == 0;
 
 		player = GetParent().GetNode<CharacterBody2D>("player");
-
+		pStats = GetParent().GetNode<Player>("player");
 
 		ScreenSize = GetViewportRect().Size;
 	}
 
-	public override void _Process(double delta){
-
+	public override void _Process(double delta)
+	{
+		speed = pStats.Speed * 0.7f;
 		if (stupid){
 			if (player == null){
 				return;
@@ -54,12 +56,13 @@ public partial class Enemy : CharacterBody2D
 			}
 		}
 
-		if (GlobalPosition.DistanceTo(player.GlobalPosition) < 150f){
-			// delete the enemy
-			QueueFree();
-			
-		}
-
-
 	}
+
+	public void _on_area_2d_area_entered(Area2D area) {
+		if (area.GetParent().IsInGroup("player")) {
+			QueueFree();
+			//Animation destruction ennemi
+		}
+	}
+
 }
