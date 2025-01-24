@@ -16,6 +16,8 @@ public partial class Enemy : CharacterBody2D
 
 	Vector2 ScreenSize;
 
+	Sprite2D sprite;
+
 	public override void _Ready(){
 		RandomNumberGenerator rng = new RandomNumberGenerator();
 		stupid = rng.RandiRange(0, 1) == 0;
@@ -24,11 +26,16 @@ public partial class Enemy : CharacterBody2D
 		pStats = GetParent().GetNode<Player>("player");
 
 		ScreenSize = GetViewportRect().Size;
+
+		sprite = GetNode<Sprite2D>("Sprite2D");
+		Random ran = new Random();
+		Texture2D tex = GD.Load<Texture2D>("res://assets/enemy" + (ran.Next(0, 2) + 1).ToString() + ".png");
+		sprite.Texture = tex;
 	}
 
 	public override void _Process(double delta)
 	{
-		speed = pStats.Speed * 0.7f;
+		speed = pStats.Speed * 0.6f;
 		if (stupid){
 			if (player == null){
 				return;

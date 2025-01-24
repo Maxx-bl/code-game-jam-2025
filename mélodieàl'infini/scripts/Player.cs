@@ -96,7 +96,7 @@ public partial class Player : CharacterBody2D
         {
             if (Speed < _maxSpeed)
             {
-                Speed += 50f;
+                Speed += 50f;   
             }
         }
     }
