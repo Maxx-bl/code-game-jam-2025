@@ -1,9 +1,200 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4edyn0rt4gkp"]
+[gd_scene load_steps=8 format=3 uid="uid://b4edyn0rt4gkp"]
 
 [ext_resource type="Texture2D" uid="uid://b7cmneex0ir05" path="res://lifebar_16x16.webp" id="1_2vjoi"]
+[ext_resource type="Texture2D" uid="uid://bxxr2svr2hx3b" path="res://heart shattered.webp" id="2_bwqat"]
+[ext_resource type="Texture2D" uid="uid://3tb0f8rcy53q" path="res://heart particule.webp" id="3_t8jwx"]
+
+[sub_resource type="Animation" id="Animation_0u0rs"]
+resource_name = "Death"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.5),
+"transitions": PackedFloat32Array(1e-05, 1e-05, 1e-05, 1e-05, 1e-05, 1e-05, 1e-05, 1e-05, 1e-05, 1e-05, 1e-05, 1),
+"update": 0,
+"values": [Vector2(278, 203), Vector2(350, 203), Vector2(278, 203), Vector2(350, 203), Vector2(278, 203), Vector2(350, 203), Vector2(278, 203), Vector2(350, 203), Vector2(278, 203), Vector2(350, 203), Vector2(278, 203), Vector2(278, 203)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../HeartShattered:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../HeartShattered:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(201, 149), Vector2(201, 149)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../GPUParticles2D:visible")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../GPUParticles2D2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_654cj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(278, 203)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../HeartShattered:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../HeartShattered:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(201, 149)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../GPUParticles2D:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../GPUParticles2D2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hj1t0"]
+_data = {
+"Death": SubResource("Animation_0u0rs"),
+"RESET": SubResource("Animation_654cj")
+}
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tpx5v"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(30, 75, 1)
+gravity = Vector3(0, 1000, 0)
+scale_min = 1.5
+scale_max = 1.5
+turbulence_enabled = true
 
 [node name="Death" type="Node2D"]
+self_modulate = Color(25, 1, 22, 1)
 
 [node name="Lifebar16x16" type="Sprite2D" parent="."]
 position = Vector2(278, 203)
 texture = ExtResource("1_2vjoi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lifebar16x16"]
+libraries = {
+"": SubResource("AnimationLibrary_hj1t0")
+}
+
+[node name="HeartShattered" type="Sprite2D" parent="."]
+position = Vector2(201, 149)
+texture = ExtResource("2_bwqat")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(145, 161)
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_tpx5v")
+texture = ExtResource("3_t8jwx")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+visible = false
+position = Vector2(269, 162)
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_tpx5v")
+texture = ExtResource("3_t8jwx")
