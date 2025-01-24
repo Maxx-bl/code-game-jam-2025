@@ -10,7 +10,6 @@ public partial class Player : CharacterBody2D
 	private float _speed_keyboard = 800f;
 	private Camera2D cam;
 
-
 	private Color _drawColor;
 
 	Vector2 ScreenSize;
