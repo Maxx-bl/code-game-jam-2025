@@ -12,6 +12,10 @@ public partial class Map : Node2D
 		var sceneInstance = scene.Instantiate();
 		AddChild(sceneInstance);
 
+		var player = GD.Load<PackedScene>("res://scenes/player.tscn");
+		var playerInstance = player.Instantiate();
+		AddChild(playerInstance);
+
 		gm = GetNode<GameManager>("GameManager");
 		gm.SetDifficulty(25);
 		GD.Print(gm.Difficulty);
