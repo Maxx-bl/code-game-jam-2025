@@ -29,6 +29,7 @@ project/assembly_name="MélodieÀL-Infini"
 player=""
 enemy=""
 obstacle=""
+powerup=""
 
 [input]
 

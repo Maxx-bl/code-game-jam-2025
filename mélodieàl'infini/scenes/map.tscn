@@ -1,16 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1tptrs4iwjgw"]
+[gd_scene load_steps=5 format=3 uid="uid://b1tptrs4iwjgw"]
 
 [ext_resource type="Script" path="res://scripts/Map.cs" id="1_c2q2k"]
-[ext_resource type="Texture2D" uid="uid://d1a6b4yn0mr7r" path="res://assets/infini.png" id="1_lqa26"]
+[ext_resource type="Texture2D" uid="uid://bjg5hnuv4udtk" path="res://assets/infinite.svg" id="2_agi0o"]
 [ext_resource type="PackedScene" uid="uid://bavt0ir0uuj8p" path="res://scenes/enemy_spawner.tscn" id="3_0glla"]
+[ext_resource type="Script" path="res://PowerUpSpawner.cs" id="4_lnl52"]
 
 [node name="map" type="Node2D"]
-position = Vector2(-335, 502)
 script = ExtResource("1_c2q2k")
 
 [node name="path" type="Sprite2D" parent="."]
-scale = Vector2(50, 50)
-texture = ExtResource("1_lqa26")
+position = Vector2(360, -530)
+scale = Vector2(7.1, 7.1)
+texture = ExtResource("2_agi0o")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -27,3 +28,9 @@ build_mode = 1
 polygon = PackedVector2Array(1105, -534, 2045, -1430, 2610, -1836, 3200, -2084, 4051, -2109, 4527, -1906, 4864, -1550, 5092, -1201, 5181, -750, 5156, -204, 4953, 342, 4680, 653, 4438, 818, 3981, 1009, 3492, 1059, 2984, 1002, 2553, 761, 2222, 513, 1721, 63)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_0glla")]
+
+[node name="PowerUpSpawner" type="Node2D" parent="."]
+script = ExtResource("4_lnl52")
+
+[node name="Node" type="Node2D" parent="."]
+position = Vector2(5810, -457)

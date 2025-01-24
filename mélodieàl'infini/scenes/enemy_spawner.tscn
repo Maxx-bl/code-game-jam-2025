@@ -18,4 +18,4 @@ position = Vector2(3263, 1494)
 position = Vector2(-3455, 1574)
 
 [node name="spawner4" type="Node2D" parent="."]
-position = Vector2(3905, -2943)
+position = Vector2(3829, -2753)

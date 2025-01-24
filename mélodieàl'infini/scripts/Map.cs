@@ -6,7 +6,8 @@ public partial class Map : Node2D
 
 	private GameManager gm;
 	private MusicManager mm;
-	private Player p;
+	public Player p;
+	public PowerUpSpawner PuP;
 
 	private float minPitch = 1.0f;
 	private float maxPitch = 7.0f;
@@ -30,6 +31,8 @@ public partial class Map : Node2D
 		gm = GetNode<GameManager>("GameManager");
 
 		p = GetNode<Player>("player");
+
+		PuP = GetNode<PowerUpSpawner>("PowerUpSpawner");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
