@@ -7,6 +7,7 @@ public partial class Map : Node2D
 	private GameManager gm;
 	private MusicManager mm;
 	private Player p;
+	private PowerUp pwr;
 
 	private float minPitch = 1.0f;
 	private float maxPitch = 5.0f;
@@ -25,11 +26,14 @@ public partial class Map : Node2D
 		var musicInstance = music.Instantiate();
 		AddChild(musicInstance);
 
+		var powerup = GD.Load<PackedScene>("res://scenes/powerup.tscn");
+		var powerupInstance = powerup.Instantiate();
+		AddChild(powerupInstance);
+
 		mm = GetNode<MusicManager>("MusicManager");
-
 		gm = GetNode<GameManager>("GameManager");
-
 		p = GetNode<Player>("player");
+		pwr = GetNode<PowerUp>("PowerUp");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
