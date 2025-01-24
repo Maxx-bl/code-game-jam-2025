@@ -3,12 +3,14 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-    private Vector2 _targetPosition;
-    private bool _isMoving = false;
-    public float _defaultSpeed = 800f;
-    public float _maxSpeed = 6000f;
-    public float Speed;
-    private double _elapsedTime;
+
+	private Vector2 _targetPosition;
+	private bool _isMoving = false;
+	public float _defaultSpeed = 800f;
+	public float _maxSpeed = 6000f;
+	public float Speed;
+	private double _elapsedTime;
+	public bool _collected;
 
     public int Hp;
 
@@ -20,6 +22,7 @@ public partial class Player : CharacterBody2D
         _targetPosition = Position;
         ScreenSize = GetViewportRect().Size;
         Hp = 3;
+        _collected = false;
     }
 
     public override void _Input(InputEvent @event)
@@ -63,6 +66,24 @@ public partial class Player : CharacterBody2D
             MoveAndSlide();
         }
     }
+	public override void _PhysicsProcess(double delta){
+		if (_isMoving){
+			Vector2 move = _targetPosition - Position;
+			if (move.Length() > 10f){
+				Velocity = move.Normalized() * Speed;
+				MoveAndCollide(Velocity);
+			}
+		}
+	}
+
+	public void powerUpHealth()
+	{
+		Hp++;
+	}
+	public void powerUpDouble()
+	{
+		Hp *= 2;
+	}
 
     private void KeyboardMovement(double delta)
     {

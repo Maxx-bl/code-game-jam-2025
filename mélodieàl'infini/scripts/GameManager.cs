@@ -14,9 +14,9 @@ public partial class GameManager : Node
 		Score = 0;
 	}
 
-    public override void _Process(double delta)
-    {
-        
+	public override void _Process(double delta)
+	{
+		
 		elapsedTime += delta;
 		if (Math.Floor(elapsedTime) > Math.Floor(elapsedTime - delta))
 		{
@@ -24,7 +24,7 @@ public partial class GameManager : Node
 		}
 	}
 
-    public void IncrementScore()
+	public void IncrementScore()
 	{
 		Score++;
 	}

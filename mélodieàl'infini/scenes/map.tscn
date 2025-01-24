@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bavt0ir0uuj8p" path="res://scenes/enemy_spawner.tscn" id="3_0glla"]
 
 [node name="map" type="Node2D"]
-position = Vector2(960, 540)
+position = Vector2(-335, 502)
 script = ExtResource("1_c2q2k")
 
 [node name="path" type="Sprite2D" parent="."]
