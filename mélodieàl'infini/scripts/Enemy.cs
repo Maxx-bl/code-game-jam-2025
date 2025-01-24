@@ -55,10 +55,12 @@ public partial class Enemy : CharacterBody2D
 			}
 		}
 
-		if (GlobalPosition.DistanceTo(player.GlobalPosition) < 10){
-			player.QueueFree();
+		if (GlobalPosition.DistanceTo(player.GlobalPosition) < 150f){
+			// delete the enemy
+			QueueFree();
+			
 		}
-		
+
 
 	}
 }

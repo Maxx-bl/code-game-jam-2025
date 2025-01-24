@@ -38,6 +38,9 @@ public partial class EnemySpawner : Node2D
 		else{
 			time_until_spawn += (float)delta; 
 		}
+
+		// get the number of enemies
+		count_enemies = GetParent().GetChildren().Count;
 	}
 
 	private void Spawn(){
