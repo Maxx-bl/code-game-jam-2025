@@ -9,13 +9,13 @@ enemy_scene = ExtResource("2_0bryt")
 spawn_points = [NodePath("spawner3"), NodePath("spawner2"), NodePath("spawner1"), NodePath("spawner4")]
 
 [node name="spawner2" type="Node2D" parent="."]
-position = Vector2(-3275, -2944)
+position = Vector2(-3298, -2356)
 
 [node name="spawner3" type="Node2D" parent="."]
-position = Vector2(3048, 962)
+position = Vector2(3297, 1969)
 
 [node name="spawner1" type="Node2D" parent="."]
-position = Vector2(-3455, 1574)
+position = Vector2(-3478, 1936)
 
 [node name="spawner4" type="Node2D" parent="."]
-position = Vector2(4425, -2140)
+position = Vector2(3475, -2083)

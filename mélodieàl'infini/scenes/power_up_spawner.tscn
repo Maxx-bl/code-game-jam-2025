@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://medbn7skm4h5"]
+
+[ext_resource type="Script" path="res://scripts/PowerUpSpawner.cs" id="1_iays1"]
+
+[node name="power_up_spawner" type="Node2D" node_paths=PackedStringArray("spawn_points")]
+script = ExtResource("1_iays1")
+spawn_points = [NodePath("spawner1"), NodePath("spawner2"), NodePath("spawner3")]
+
+[node name="spawner1" type="Node2D" parent="."]
+
+[node name="spawner2" type="Node2D" parent="."]
+position = Vector2(5329, 11)
+
+[node name="spawner3" type="Node2D" parent="."]
+position = Vector2(-5396, 0)

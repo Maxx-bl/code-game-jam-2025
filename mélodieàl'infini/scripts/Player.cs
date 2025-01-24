@@ -10,7 +10,6 @@ public partial class Player : CharacterBody2D
 	public float _maxSpeed = 6000f;
 	public float Speed;
 	private double _elapsedTime;
-	public bool _collected;
 
     public int Hp;
 
@@ -22,7 +21,6 @@ public partial class Player : CharacterBody2D
         _targetPosition = Position;
         ScreenSize = GetViewportRect().Size;
         Hp = 3;
-        _collected = false;
     }
 
     public override void _Input(InputEvent @event)
