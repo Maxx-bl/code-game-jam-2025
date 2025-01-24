@@ -8,6 +8,7 @@ public partial class Player : CharacterBody2D
 
 	private float _speed_mouse = 800f;
 	private float _speed_keyboard = 800f;
+	private Camera2D cam;
 
 
 	private Color _drawColor;
@@ -20,13 +21,14 @@ public partial class Player : CharacterBody2D
 		_targetPosition = Position;
 		_drawColor = new Color(1, 1, 1, 0.75f);
 		ScreenSize = GetViewportRect().Size;
+		cam = GetNode<Camera2D>("Camera2D");
 	}
 
 	public override void _Input(InputEvent @event){
-		if (@event is InputEventMouseButton eventMouseClick){
-			_targetPosition = eventMouseClick.Position;
-			_isMoving = true;
-		}
+		// if (@event is InputEventMouseButton eventMouseClick){
+		// 	_targetPosition = GetViewport().GetMousePosition();
+		// 	_isMoving = true;
+		// }
 	}
 
 	public override void _PhysicsProcess(double delta){
@@ -35,7 +37,7 @@ public partial class Player : CharacterBody2D
 			if (move.Length() > 10f){
 				Velocity = move.Normalized() * _speed_mouse;
 				MoveAndSlide();
-				QueueRedraw();
+				//QueueRedraw();
 			}
 			else{
 				_isMoving = false;
@@ -72,11 +74,6 @@ public partial class Player : CharacterBody2D
 
 			velocity = velocity.Normalized() * _speed_keyboard;
 			Position += velocity * (float)delta;
-			Position = new Vector2(
-				x: Mathf.Clamp(Position.X, 0, ScreenSize.X),
-				y: Mathf.Clamp(Position.Y, 0, ScreenSize.Y)
-			);
-
 		}
 
 	}

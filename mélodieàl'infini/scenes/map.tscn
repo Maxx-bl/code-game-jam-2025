@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1tptrs4iwjgw"]
+[gd_scene load_steps=3 format=3 uid="uid://b1tptrs4iwjgw"]
 
 [ext_resource type="Script" path="res://scripts/Map.cs" id="1_c2q2k"]
 [ext_resource type="Texture2D" uid="uid://dwflulk1d01yt" path="res://assets/infini.png" id="1_lqa26"]
-[ext_resource type="Script" path="res://scripts/Camera.cs" id="3_dy2yl"]
 
 [node name="map" type="Node2D"]
 script = ExtResource("1_c2q2k")
@@ -10,13 +9,10 @@ script = ExtResource("1_c2q2k")
 [node name="background" type="Sprite2D" parent="."]
 
 [node name="path" type="Sprite2D" parent="."]
-scale = Vector2(5, 5)
+position = Vector2(912, 623)
+scale = Vector2(10, 10)
 texture = ExtResource("1_lqa26")
 
 [node name="Area2D" type="Area2D" parent="path"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="path/Area2D"]
-
-[node name="Camera" type="Camera2D" parent="."]
-position_smoothing_enabled = true
-script = ExtResource("3_dy2yl")
