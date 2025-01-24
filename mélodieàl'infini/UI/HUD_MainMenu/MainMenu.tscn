@@ -1,6 +1,5 @@
-[gd_scene load_steps=14 format=3 uid="uid://xltorn07rd4i"]
+[gd_scene load_steps=12 format=3 uid="uid://xltorn07rd4i"]
 
-[ext_resource type="Texture2D" uid="uid://b0qltwme7gumj" path="res://UI/HUD_MainMenu.png" id="1_y3vdc"]
 [ext_resource type="Texture2D" uid="uid://bf03r5hlcel6y" path="res://UI/HUD_MM_B_Play.png" id="2_tusmj"]
 [ext_resource type="Texture2D" uid="uid://d1hhwx0nma7ru" path="res://UI/HUD_MM_BC_Play.png" id="3_cirth"]
 [ext_resource type="Texture2D" uid="uid://4bfd2ahynd8a" path="res://UI/HUD_MM_B_Settings.png" id="4_fovcd"]
@@ -12,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://bywvdx6vr50iq" path="res://UI/HUD_MainMenu/HUD_MM_StudionNameBackground.png" id="10_31oo6"]
 [ext_resource type="Texture2D" uid="uid://dakkdn18g0hax" path="res://UI/HUD_MainMenu/HUD_MM_Winner/HUD_MM_W_Background.png" id="11_n4evn"]
 [ext_resource type="Texture2D" uid="uid://baku45023a0po" path="res://UI/HUD_MainMenu/HUD_MM_Winner/HUD_MM_W_Highlight.png" id="12_fm3s6"]
-[ext_resource type="Texture2D" uid="uid://kcmsrcrgyc2e" path="res://UI/HUD_MainMenu/HUD_MM_Control/click-gauche.png" id="13_jdnss"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -21,13 +19,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Model" type="TextureRect" parent="."]
-visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_y3vdc")
 
 [node name="Button" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -114,23 +105,3 @@ texture = ExtResource("12_fm3s6")
 [node name="TextureRect3" type="TextureRect" parent="Leaderboard/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("12_fm3s6")
-
-[node name="Control" type="Container" parent="."]
-layout_mode = 0
-offset_left = 1426.0
-offset_top = 974.0
-offset_right = 1897.0
-offset_bottom = 1045.0
-
-[node name="TextureRect" type="TextureRect" parent="Control"]
-layout_mode = 2
-texture = ExtResource("13_jdnss")
-
-[node name="Label" type="Label" parent="Control"]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 50
-text = "Select"
-horizontal_alignment = 1
-autowrap_mode = 1

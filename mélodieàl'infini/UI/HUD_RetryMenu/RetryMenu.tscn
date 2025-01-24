@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://c16nsdfqionn5"]
+
+[ext_resource type="Texture2D" uid="uid://dtx4ew7g7gafs" path="res://UI/HUD_RetryMenu/HUD_RM_Button/HUD_RM_B_Retry.png" id="2_it1yt"]
+[ext_resource type="Texture2D" uid="uid://cj46m1t2u7ucj" path="res://UI/HUD_RetryMenu/HUD_RM_Button/HUD_RM_B_Settings.png" id="3_6care"]
+[ext_resource type="Texture2D" uid="uid://dggnb0pysnanq" path="res://UI/HUD_RetryMenu/HUD_RM_Button/HUD_RM_B_MM.png" id="4_g02v8"]
+[ext_resource type="Texture2D" uid="uid://c6xxqwtytfxjg" path="res://UI/HUD_RetryMenu/HUD_RM_Text/HUD_RM_Text.png" id="5_af5cn"]
+[ext_resource type="Texture2D" uid="uid://l74yviivfanp" path="res://UI/HUD_RetryMenu/HUD_RM_Button/HUD_RM_B_Leave.png" id="5_telrs"]
+
+[node name="RetryMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 758.0
+offset_top = 558.0
+offset_right = 1184.0
+offset_bottom = 902.0
+
+[node name="TextureButtonRetry" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../TextureButtonLeave")
+focus_neighbor_bottom = NodePath("../TextureButtonSettings")
+texture_normal = ExtResource("2_it1yt")
+
+[node name="TextureButtonSettings" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../TextureButtonRetry")
+focus_neighbor_bottom = NodePath("../TextureButtoMM")
+texture_normal = ExtResource("3_6care")
+
+[node name="TextureButtoMM" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../TextureButtonSettings")
+focus_neighbor_bottom = NodePath("../TextureButtonLeave")
+texture_normal = ExtResource("4_g02v8")
+
+[node name="TextureButtonLeave" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../TextureButtoMM")
+focus_neighbor_bottom = NodePath("../TextureButtonRetry")
+texture_normal = ExtResource("5_telrs")
+
+[node name="Text" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 614.0
+offset_top = 235.0
+offset_right = 1356.0
+offset_bottom = 345.0
+texture = ExtResource("5_af5cn")

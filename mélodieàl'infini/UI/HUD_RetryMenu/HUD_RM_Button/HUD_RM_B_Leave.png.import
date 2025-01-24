@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kcmsrcrgyc2e"
-path="res://.godot/imported/click-gauche.png-e0e9900633d48ecea679eacf6aa69e53.ctex"
+uid="uid://l74yviivfanp"
+path="res://.godot/imported/HUD_RM_B_Leave.png-a9e2ddeadf5c5339b481bd76a4b4d15e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/HUD_MainMenu/HUD_MM_Control/click-gauche.png"
-dest_files=["res://.godot/imported/click-gauche.png-e0e9900633d48ecea679eacf6aa69e53.ctex"]
+source_file="res://UI/HUD_RetryMenu/HUD_RM_Button/HUD_RM_B_Leave.png"
+dest_files=["res://.godot/imported/HUD_RM_B_Leave.png-a9e2ddeadf5c5339b481bd76a4b4d15e.ctex"]
 
 [params]
 
