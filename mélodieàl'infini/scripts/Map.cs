@@ -6,9 +6,17 @@ public partial class Map : Node2D
 
 	private GameManager gm;
 	private MusicManager mm;
+	private Player p;
+
+	private float minPitch = 1.0f;
+	private float maxPitch = 5.0f;
+
+	private double elapsedTime;
 
 	public override void _Ready()
 	{
+		elapsedTime = 0f;
+
 		var scene = GD.Load<PackedScene>("res://scenes/game_manager.tscn");
 		var sceneInstance = scene.Instantiate();
 		AddChild(sceneInstance);
@@ -23,26 +31,22 @@ public partial class Map : Node2D
 
 		mm = GetNode<MusicManager>("MusicManager");
 
-		gm = GetNode<GameManager>("GameManager");		
+		gm = GetNode<GameManager>("GameManager");
+
+		p = GetNode<Player>("Player");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if (gm.Score < 5) {
-			mm.SetPitch(1f);
-		} else if (gm.Score < 10) {
-			mm.SetPitch(1.5f);
-		} else if (gm.Score < 15) {
-			mm.SetPitch(2f);
-		} else if (gm.Score < 20) {
-			mm.SetPitch(2.5f);
-		} else if (gm.Score < 25) {
-			mm.SetPitch(3f);
-		} else if (gm.Score < 30) {
-			mm.SetPitch(3.5f);
-		} else if (gm.Score < 35) {
-			mm.SetPitch(4f);
+		float pitch = Mathf.Lerp(minPitch, maxPitch, Mathf.Clamp(p.Speed / 7500f, 0f, 1f));  // Adjust the divisor to control sensitivity		mm.SetPitch(pitch);
+		mm.SetPitch(pitch);
+
+		elapsedTime += delta;
+		if (Math.Floor(elapsedTime) > Math.Floor(elapsedTime - delta))
+		{
+			gm.IncrementScore(p.Speed);
 		}
+		GD.Print(gm.Score);
 	}
 }
