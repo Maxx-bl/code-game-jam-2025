@@ -44,7 +44,7 @@ glow_enabled = true
 glow_intensity = 2.0
 glow_strength = 0.5
 
-[node name="Node2D" type="Node2D"]
+[node name="Glow Effect" type="Node2D"]
 
 [node name="Icon" type="Sprite2D" parent="."]
 self_modulate = Color(25, 1, 22, 1)
