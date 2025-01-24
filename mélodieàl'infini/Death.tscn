@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4edyn0rt4gkp"]
+
+[ext_resource type="Texture2D" uid="uid://b7cmneex0ir05" path="res://lifebar_16x16.webp" id="1_2vjoi"]
+
+[node name="Death" type="Node2D"]
+
+[node name="Lifebar16x16" type="Sprite2D" parent="."]
+position = Vector2(278, 203)
+texture = ExtResource("1_2vjoi")
