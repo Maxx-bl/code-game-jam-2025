@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtjd3kjf7hi7h"]
+
+[ext_resource type="Script" path="res://scripts/Credits.cs" id="1_8aeiu"]
+[ext_resource type="Texture2D" uid="uid://mid4ouheo6xf" path="res://assets/Credits.png" id="1_32jq8"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8aeiu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_32jq8")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1919.0
+offset_bottom = 1080.0
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

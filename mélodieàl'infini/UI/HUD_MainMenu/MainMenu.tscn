@@ -114,5 +114,6 @@ texture = ExtResource("12_fm3s6")
 layout_mode = 2
 texture = ExtResource("12_fm3s6")
 
-[connection signal="button_down" from="Button/ButtonPlay" to="." method="_on_button_play_button_down"]
-[connection signal="button_down" from="Button/ButtonQuit" to="." method="_on_button_quit_button_down"]
+[connection signal="button_up" from="Button/ButtonPlay" to="." method="_on_button_play_button_up"]
+[connection signal="button_up" from="Button/ButtonCredits" to="." method="_on_button_credits_button_up"]
+[connection signal="button_up" from="Button/ButtonQuit" to="." method="_on_button_quit_button_up"]
