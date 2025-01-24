@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8mhm2ne1fntr"]
+
+[ext_resource type="Texture2D" uid="uid://cm2ee4rwatnmm" path="res://asset/Speaker_Icon.png" id="1_ij32e"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_mmfm0"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r8ntm"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(200, 100, 0)
+angle_min = -200.0
+angle_max = 200.0
+gravity = Vector3(0, 98, 0)
+
+[node name="EnnemiesEnceinteDeath" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_mmfm0")
+amount = 32
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_r8ntm")
+texture = ExtResource("1_ij32e")
