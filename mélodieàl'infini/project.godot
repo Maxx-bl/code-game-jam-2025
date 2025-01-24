@@ -11,11 +11,8 @@ config_version=5
 [application]
 
 config/name="MélodieÀL'Infini"
-<<<<<<< HEAD
+
 run/main_scene="res://scenes/map.tscn"
-=======
-run/main_scene="res://scenes/player.tscn"
->>>>>>> origin/character
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
