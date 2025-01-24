@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://ggmt6pcdauqc"]
+
+[ext_resource type="Script" path="res://scripts/EnemySpawner.cs" id="1_d0b7k"]
+[ext_resource type="PackedScene" uid="uid://cluq6frhkgtur" path="res://scenes/enemy.tscn" id="2_0bryt"]
+
+[node name="EnemySpawner" type="Node2D" node_paths=PackedStringArray("spawn_points")]
+script = ExtResource("1_d0b7k")
+enemy_scene = ExtResource("2_0bryt")
+spawn_points = [NodePath("spawner3"), NodePath("spawner2"), NodePath("spawner3"), NodePath("spawner4")]
+spawn_interval = 20.0
+
+[node name="spawner2" type="Node2D" parent="."]
+position = Vector2(261, 429)
+
+[node name="spawner3" type="Node2D" parent="."]
+position = Vector2(35, 36)
+
+[node name="spawner" type="Node2D" parent="."]
+position = Vector2(834, 412)
+
+[node name="spawner4" type="Node2D" parent="."]
+position = Vector2(907, 47)
