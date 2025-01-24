@@ -1,0 +1,117 @@
+[gd_scene load_steps=13 format=3 uid="uid://xltorn07rd4i"]
+
+[ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_u1gt2"]
+[ext_resource type="Texture2D" uid="uid://dv3vijntgcn5l" path="res://UI/HUD_MainMenu/HUD_MM_Button/HUD_MM_B_Play.png" id="2_tusmj"]
+[ext_resource type="Texture2D" uid="uid://b0k2e47n67hgf" path="res://UI/HUD_MainMenu/HUD_MM_ButtonClicked/HUD_MM_BC_Play.png" id="3_cirth"]
+[ext_resource type="Texture2D" uid="uid://d2b504atce6kj" path="res://UI/HUD_MainMenu/HUD_MM_Button/HUD_MM_B_Settings.png" id="4_fovcd"]
+[ext_resource type="Texture2D" uid="uid://bu2oi875srjr8" path="res://UI/HUD_MainMenu/HUD_MM_ButtonClicked/HUD_MM_BC_Settings.png" id="5_j2wfd"]
+[ext_resource type="Texture2D" uid="uid://x6aeedg18xcb" path="res://UI/HUD_MainMenu/HUD_MM_Button/HUD_MM_B_Credits.png" id="6_1s0x4"]
+[ext_resource type="Texture2D" uid="uid://c7iad6xdw648f" path="res://UI/HUD_MainMenu/HUD_MM_ButtonClicked/HUD_MM_BC_Credits.png" id="7_3iwd7"]
+[ext_resource type="Texture2D" uid="uid://bir0oi0rkh11t" path="res://UI/HUD_MainMenu/HUD_MM_Button/HUD_MM_B_Quit.png" id="8_ho8w8"]
+[ext_resource type="Texture2D" uid="uid://doqxycgg5ysv" path="res://UI/HUD_MainMenu/HUD_MM_ButtonClicked/HUD_MM_BC_Quit.png" id="9_vdktk"]
+[ext_resource type="Texture2D" uid="uid://bywvdx6vr50iq" path="res://UI/HUD_MainMenu/HUD_MM_StudionNameBackground.png" id="10_31oo6"]
+[ext_resource type="Texture2D" uid="uid://dakkdn18g0hax" path="res://UI/HUD_MainMenu/HUD_MM_Winner/HUD_MM_W_Background.png" id="11_n4evn"]
+[ext_resource type="Texture2D" uid="uid://baku45023a0po" path="res://UI/HUD_MainMenu/HUD_MM_Winner/HUD_MM_W_Highlight.png" id="12_fm3s6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u1gt2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(4.10194e-05, 0.0277008, 0.187741, 1)
+
+[node name="Button" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.091
+anchor_top = 0.448
+anchor_right = 0.091
+anchor_bottom = 0.448
+offset_left = 13.28
+offset_top = 0.159973
+offset_right = 364.28
+offset_bottom = 360.16
+
+[node name="ButtonPlay" type="TextureButton" parent="Button"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ButtonQuit")
+focus_neighbor_bottom = NodePath("../ButtonSettings")
+texture_normal = ExtResource("2_tusmj")
+texture_pressed = ExtResource("3_cirth")
+
+[node name="ButtonSettings" type="TextureButton" parent="Button"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ButtonPlay")
+focus_neighbor_bottom = NodePath("../ButtonCredits")
+texture_normal = ExtResource("4_fovcd")
+texture_pressed = ExtResource("5_j2wfd")
+
+[node name="ButtonCredits" type="TextureButton" parent="Button"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ButtonSettings")
+focus_neighbor_bottom = NodePath("../ButtonQuit")
+texture_normal = ExtResource("6_1s0x4")
+texture_pressed = ExtResource("7_3iwd7")
+
+[node name="ButtonQuit" type="TextureButton" parent="Button"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ButtonCredits")
+focus_neighbor_bottom = NodePath("../ButtonPlay")
+texture_normal = ExtResource("8_ho8w8")
+texture_pressed = ExtResource("9_vdktk")
+
+[node name="Title" type="Container" parent="."]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 58.0
+offset_right = 483.0
+offset_bottom = 160.0
+
+[node name="Background" type="TextureRect" parent="Title"]
+layout_mode = 2
+texture = ExtResource("10_31oo6")
+
+[node name="Label" type="Label" parent="Title"]
+modulate = Color(0, 0.733333, 0.976471, 1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 57
+text = "Music of Honor"
+horizontal_alignment = 1
+
+[node name="Leaderboard" type="Container" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 256.0
+offset_right = 633.0
+offset_bottom = 414.0
+
+[node name="TextureRect" type="TextureRect" parent="Leaderboard"]
+layout_mode = 2
+texture = ExtResource("11_n4evn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Leaderboard"]
+layout_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Leaderboard/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("12_fm3s6")
+
+[node name="TextureRect" type="TextureRect" parent="Leaderboard/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("12_fm3s6")
+
+[node name="TextureRect3" type="TextureRect" parent="Leaderboard/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("12_fm3s6")
+
+[connection signal="button_down" from="Button/ButtonPlay" to="." method="_on_button_play_button_down"]

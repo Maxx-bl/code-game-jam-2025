@@ -48,7 +48,7 @@ public partial class Player : CharacterBody2D
         }
         else
         {
-            KeyboardMovement(delta); 
+            KeyboardMovement(delta);
         }
 
         IncrementSpeed(delta);
@@ -96,17 +96,26 @@ public partial class Player : CharacterBody2D
         {
             if (Speed < _maxSpeed)
             {
-                Speed += 50f;   
+                Speed += 50f;
             }
         }
     }
 
-    public void CollideWithEnemy() {
-        if (Hp > 1) {
+    public void CollideWithEnemy()
+    {
+        if (Hp > 1)
+        {
             Hp--;
             // Animation perte HP
-        } else {
-            // Game over
         }
+        else
+        {
+            CallDeferred("GoToMainMenu");
+        }
+    }
+
+    private void GoToMainMenu()
+    {
+        GetTree().ChangeSceneToFile("res://UI/HUD_MainMenu/MainMenu.tscn");
     }
 }
