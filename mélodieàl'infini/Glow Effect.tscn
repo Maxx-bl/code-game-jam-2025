@@ -1,20 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://gu6hvelahyxw"]
+[gd_scene load_steps=7 format=3 uid="uid://gu6hvelahyxw"]
 
 [ext_resource type="Texture2D" uid="uid://btyrebkk2ea3" path="res://icon.svg" id="1_72sq5"]
+[ext_resource type="Texture2D" uid="uid://d3fep2j70ujwm" path="res://map.png" id="2_76jot"]
 
 [sub_resource type="Animation" id="Animation_ldw8p"]
 resource_name = "Glow anim"
+length = 3.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".:self_modulate")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.75, 1.5, 2.25, 3),
+"transitions": PackedFloat32Array(0.5, 2, 0.5, 2, 0.5),
 "update": 0,
-"values": [Color(25, 1, 22, 1), Color(2.5, 1, 2.2, 1), Color(25, 1, 22, 1)]
+"values": [Color(25, 1, 22, 1), Color(2.5, 1, 2.2, 1), Color(25, 1, 22, 1), Color(2.5, 1, 2.2, 1), Color(25, 1, 22, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_h74uf"]
@@ -58,3 +61,13 @@ libraries = {
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1wkle")
+
+[node name="Map" type="Sprite2D" parent="."]
+self_modulate = Color(25, 1, 22, 1)
+position = Vector2(692, 145)
+texture = ExtResource("2_76jot")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Map"]
+libraries = {
+"": SubResource("AnimationLibrary_bh4qt")
+}
