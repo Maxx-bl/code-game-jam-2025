@@ -14,13 +14,10 @@ public partial class Player : CharacterBody2D
 
 	Vector2 ScreenSize;
 
-
-
 	public override void _Ready(){
 		_targetPosition = Position;
 		_drawColor = new Color(1, 1, 1, 0.75f);
 		ScreenSize = GetViewportRect().Size;
-		cam = GetNode<Camera2D>("Camera2D");
 	}
 
 	public override void _Input(InputEvent @event){
@@ -49,7 +46,6 @@ public partial class Player : CharacterBody2D
 				_isMoving = false;
 			}
 		}
-		
 	}
 
 	public override void _Draw(){
