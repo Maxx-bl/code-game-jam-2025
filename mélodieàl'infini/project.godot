@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 project/assembly_name="MélodieÀL-Infini"
 
+[global_group]
+
+player=""
+
 [input]
 
 player_up={

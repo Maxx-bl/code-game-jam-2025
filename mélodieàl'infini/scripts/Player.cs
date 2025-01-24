@@ -5,11 +5,10 @@ public partial class Player : CharacterBody2D
 {
 	private Vector2 _targetPosition;
 	private bool _isMoving = false;
-	private bool _isMovingWithKeyboard = false;
-
-	public float _defaultSpeed = 750f;
+	public float _defaultSpeed = 800f;
+	public float _maxSpeed = 6000f;
 	public float Speed;
-	private double _timerCount;
+	private double _elapsedTime;
 
 	public int Hp;
 
@@ -49,8 +48,8 @@ public partial class Player : CharacterBody2D
 			Vector2 move = _targetPosition - Position;
 			if (move.Length() > 10f)
 			{
-				Velocity = move.Normalized() * Speed;
-				MoveAndSlide();
+				Velocity = move.Normalized() * Speed * (float)delta;
+				MoveAndCollide(Velocity);
 			}
 		}
 	}
@@ -61,8 +60,6 @@ public partial class Player : CharacterBody2D
 
 		if (!_isMoving)
 		{
-			if (Input.IsActionPressed("player_up") || Input.IsActionPressed("player_down") || Input.IsActionPressed("player_right") || Input.IsActionPressed("player_left")) { _isMovingWithKeyboard = true; } else {_isMovingWithKeyboard = false; Speed = 0f; }
-
 			if (Input.IsActionPressed("player_up"))
 			{
 				velocity.Y -= 1;
@@ -80,18 +77,17 @@ public partial class Player : CharacterBody2D
 				velocity.X += 1;
 			}
 
-			velocity = velocity.Normalized() * Speed;
-			Position += velocity * (float)delta;
+			velocity = velocity.Normalized() * Speed * (float)delta;
+			MoveAndCollide(velocity);
+			//Position += velocity * (float)delta;
 		}
 
-		_timerCount += delta;
-
-		if ((_isMoving || _isMovingWithKeyboard) && _timerCount >= 1.0f)
+		_elapsedTime += delta;
+		if (Math.Floor(_elapsedTime) > Math.Floor(_elapsedTime - delta))
 		{
-			_timerCount = 0f;
-			if (Speed == 0f) Speed = _defaultSpeed;
-			else Speed += 50;
+			if (Speed < _maxSpeed) {
+				Speed+=50f;
+			}
 		}
-
 	}
 }

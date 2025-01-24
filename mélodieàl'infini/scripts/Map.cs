@@ -11,12 +11,8 @@ public partial class Map : Node2D
 	private float minPitch = 1.0f;
 	private float maxPitch = 5.0f;
 
-	private double elapsedTime;
-
 	public override void _Ready()
 	{
-		elapsedTime = 0f;
-
 		var scene = GD.Load<PackedScene>("res://scenes/game_manager.tscn");
 		var sceneInstance = scene.Instantiate();
 		AddChild(sceneInstance);
@@ -39,14 +35,7 @@ public partial class Map : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		float pitch = Mathf.Lerp(minPitch, maxPitch, Mathf.Clamp(p.Speed / 7500f, 0f, 1f));
+		float pitch = Mathf.Lerp(minPitch, maxPitch, Mathf.Clamp(gm.Score / 1000f, 0f, 1f));
 		mm.SetPitch(pitch);
-
-		elapsedTime += delta;
-		if (Math.Floor(elapsedTime) > Math.Floor(elapsedTime - delta))
-		{
-			gm.IncrementScore(p.Speed);
-		}
-		GD.Print(gm.Score);
 	}
 }
