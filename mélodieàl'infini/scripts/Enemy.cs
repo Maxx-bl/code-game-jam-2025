@@ -68,6 +68,7 @@ public partial class Enemy : CharacterBody2D
 	public void _on_area_2d_area_entered(Area2D area) {
 		if (area.GetParent().IsInGroup("player")) {
 			QueueFree();
+			pStats.CollideWithEnemy();
 			//Animation destruction ennemi
 		}
 	}

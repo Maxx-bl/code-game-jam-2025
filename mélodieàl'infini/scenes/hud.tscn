@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://5rn14finefk0"]
+
+[ext_resource type="Script" path="res://scripts/Hud.cs" id="1_7glir"]
+
+[node name="hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7glir")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="score" type="Label" parent="CanvasLayer"]
+offset_right = 65.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 0.86984, 0.426137, 1)
+theme_override_font_sizes/font_size = 50
+text = "Score: 0 "
+
+[node name="health" type="Label" parent="CanvasLayer"]
+offset_top = 50.0
+offset_right = 201.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(1, 0.86984, 0.426137, 1)
+theme_override_font_sizes/font_size = 50
+text = "Health: 1"
