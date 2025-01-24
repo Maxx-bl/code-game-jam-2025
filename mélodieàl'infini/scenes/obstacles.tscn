@@ -1,0 +1,219 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0vhy8k3je8fv"]
+
+[ext_resource type="PackedScene" uid="uid://i0k1cqpejcyi" path="res://scenes/obstacle.tscn" id="1_3pkk6"]
+[ext_resource type="Script" path="res://scripts/Obstacles.cs" id="1_j2st1"]
+
+[node name="obstacles" type="Node" node_paths=PackedStringArray("obstacle_points")]
+script = ExtResource("1_j2st1")
+obstacle_scene = ExtResource("1_3pkk6")
+obstacle_points = [NodePath("obstacle1"), NodePath("obstacle2"), NodePath("obstacle3"), NodePath("obstacle4"), NodePath("obstacle5"), NodePath("obstacle6"), NodePath("obstacle7"), NodePath("obstacle8"), NodePath("obstacle9"), NodePath("obstacle10"), NodePath("obstacle11"), NodePath("obstacle12"), NodePath("obstacle13"), NodePath("obstacle24"), NodePath("obstacle25"), NodePath("obstacle26"), NodePath("obstacle27"), NodePath("obstacle28"), NodePath("obstacle29"), NodePath("obstacle30"), NodePath("obstacle31"), NodePath("obstacle32"), NodePath("obstacle33"), NodePath("obstacle14"), NodePath("obstacle15"), NodePath("obstacle16"), NodePath("obstacle34"), NodePath("obstacle35"), NodePath("obstacle36"), NodePath("obstacle37"), NodePath("obstacle38"), NodePath("obstacle39"), NodePath("obstacle40"), NodePath("obstacle41"), NodePath("obstacle42"), NodePath("obstacle43"), NodePath("obstacle44"), NodePath("obstacle45"), NodePath("obstacle46"), NodePath("obstacle47"), NodePath("obstacle48"), NodePath("obstacle49"), NodePath("obstacle50"), NodePath("obstacle51"), NodePath("obstacle52"), NodePath("obstacle53"), NodePath("obstacle54"), NodePath("obstacle17"), NodePath("obstacle18"), NodePath("obstacle19"), NodePath("obstacle20"), NodePath("obstacle21"), NodePath("obstacle22"), NodePath("obstacle23")]
+
+[node name="obstacle1" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-4516, -6)
+
+[node name="obstacle2" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-3414, -1488)
+
+[node name="obstacle3" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-4103, 948)
+
+[node name="obstacle4" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(6373, 1158)
+
+[node name="obstacle5" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(6826, 130)
+rotation = 3.14159
+
+[node name="obstacle6" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(6402, -1009)
+
+[node name="obstacle7" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(6402, -1009)
+
+[node name="obstacle8" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(638, 532)
+script = null
+
+[node name="obstacle9" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-3665, 1259)
+script = null
+
+[node name="obstacle10" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-4265, -439)
+script = null
+
+[node name="obstacle11" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-4382, 426)
+script = null
+
+[node name="obstacle12" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-3933, -386)
+script = null
+
+[node name="obstacle13" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-3698, 511)
+script = null
+
+[node name="obstacle24" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(562, -460)
+script = null
+
+[node name="obstacle25" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(1032, 42)
+script = null
+
+[node name="obstacle26" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-1402, 1985)
+script = null
+
+[node name="obstacle27" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-964, 1611)
+script = null
+
+[node name="obstacle28" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(1726, 607)
+script = null
+
+[node name="obstacle29" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-420, 1440)
+script = null
+
+[node name="obstacle30" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-25, 1024)
+script = null
+
+[node name="obstacle31" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-46, -1070)
+script = null
+
+[node name="obstacle32" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-527, -1337)
+script = null
+
+[node name="obstacle33" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(392, -1369)
+script = null
+
+[node name="obstacle14" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-2246, 1889)
+script = null
+
+[node name="obstacle15" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(1481, -653)
+script = null
+
+[node name="obstacle16" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(1983, -397)
+script = null
+
+[node name="obstacle34" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(2442, -792)
+script = null
+
+[node name="obstacle35" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(2965, -1176)
+script = null
+
+[node name="obstacle36" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(2848, -1849)
+script = null
+
+[node name="obstacle37" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(3744, -2009)
+script = null
+
+[node name="obstacle38" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(4588, -1742)
+script = null
+
+[node name="obstacle39" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(4930, -1956)
+script = null
+
+[node name="obstacle40" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(5720, -1572)
+script = null
+
+[node name="obstacle41" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(5474, -1956)
+script = null
+
+[node name="obstacle42" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(6296, -482)
+script = null
+
+[node name="obstacle43" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(6189, 458)
+script = null
+
+[node name="obstacle44" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(6926, 640)
+script = null
+
+[node name="obstacle45" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(6894, -567)
+script = null
+
+[node name="obstacle46" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(5826, 1451)
+script = null
+
+[node name="obstacle47" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(5474, 2038)
+script = null
+
+[node name="obstacle48" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(4524, 1931)
+script = null
+
+[node name="obstacle49" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(3467, 1675)
+script = null
+
+[node name="obstacle50" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(2410, 1280)
+script = null
+
+[node name="obstacle51" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(2826, 1280)
+script = null
+
+[node name="obstacle52" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(2997, 1814)
+script = null
+
+[node name="obstacle53" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(3883, 2113)
+script = null
+
+[node name="obstacle54" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(6286, 1739)
+script = null
+
+[node name="obstacle17" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-2833, -1624)
+script = null
+
+[node name="obstacle18" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-2438, -1936)
+script = null
+
+[node name="obstacle19" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-1701, -1946)
+script = null
+
+[node name="obstacle20" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-1050, -1753)
+script = null
+
+[node name="obstacle21" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-3314, 1995)
+script = null
+
+[node name="obstacle22" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-3442, -1070)
+script = null
+
+[node name="obstacle23" parent="." instance=ExtResource("1_3pkk6")]
+position = Vector2(-4051, -1038)
+script = null
