@@ -25,10 +25,17 @@ public partial class Player : CharacterBody2D
 	}
 
 	public override void _Input(InputEvent @event){
-		// if (@event is InputEventMouseButton eventMouseClick){
-		// 	_targetPosition = GetViewport().GetMousePosition();
-		// 	_isMoving = true;
-		// }
+		if (@event is InputEventMouseMotion eventMouseMotion && _isMoving){
+			_targetPosition = GetGlobalMousePosition();
+		}
+		
+		if (@event is InputEventMouseButton eventMouseClick && eventMouseClick.Pressed){
+		 	_targetPosition = GetGlobalMousePosition();
+		 	_isMoving = true;
+		}
+		else if (@event is InputEventMouseButton eventMouseClicke && !eventMouseClicke.Pressed){
+			_isMoving = false;
+		}
 	}
 
 	public override void _PhysicsProcess(double delta){
@@ -43,6 +50,7 @@ public partial class Player : CharacterBody2D
 				_isMoving = false;
 			}
 		}
+		
 	}
 
 	public override void _Draw(){
