@@ -19,7 +19,7 @@ public partial class Player : CharacterBody2D
         Speed = _defaultSpeed;
         _targetPosition = Position;
         ScreenSize = GetViewportRect().Size;
-        Hp = 1;
+        Hp = 3;
     }
 
     public override void _Input(InputEvent @event)
@@ -96,8 +96,17 @@ public partial class Player : CharacterBody2D
         {
             if (Speed < _maxSpeed)
             {
-                Speed += 50f;
+                Speed += 50f;   
             }
+        }
+    }
+
+    public void CollideWithEnemy() {
+        if (Hp > 1) {
+            Hp--;
+            // Animation perte HP
+        } else {
+            // Game over
         }
     }
 }

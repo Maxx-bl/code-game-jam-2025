@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://b4edyn0rt4gkp"]
 
-[ext_resource type="Texture2D" uid="uid://b7cmneex0ir05" path="res://lifebar_16x16.webp" id="1_2vjoi"]
-[ext_resource type="Texture2D" uid="uid://bxxr2svr2hx3b" path="res://heart shattered.webp" id="2_bwqat"]
-[ext_resource type="Texture2D" uid="uid://3tb0f8rcy53q" path="res://heart particule.webp" id="3_t8jwx"]
+[ext_resource type="Texture2D" uid="uid://b7cmneex0ir05" path="res://asset/lifebar_16x16.webp" id="1_2vjoi"]
+[ext_resource type="Texture2D" uid="uid://bxxr2svr2hx3b" path="res://asset/heart shattered.webp" id="2_bwqat"]
+[ext_resource type="Texture2D" uid="uid://3tb0f8rcy53q" path="res://asset/heart particule.webp" id="3_t8jwx"]
 
 [sub_resource type="Animation" id="Animation_0u0rs"]
 resource_name = "Death"

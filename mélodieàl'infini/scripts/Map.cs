@@ -9,7 +9,7 @@ public partial class Map : Node2D
 	private Player p;
 
 	private float minPitch = 1.0f;
-	private float maxPitch = 5.0f;
+	private float maxPitch = 7.0f;
 
 	public override void _Ready()
 	{
@@ -35,7 +35,7 @@ public partial class Map : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		float pitch = Mathf.Lerp(minPitch, maxPitch, Mathf.Clamp(gm.Score / 1000f, 0f, 1f));
+		float pitch = Mathf.Lerp(minPitch, maxPitch, Mathf.Clamp(gm.Score / 850f, 0f, 1f));
 		mm.SetPitch(pitch);
 	}
 }
