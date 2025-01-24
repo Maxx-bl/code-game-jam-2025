@@ -114,7 +114,7 @@ public partial class Player : CharacterBody2D
         }
     }
 
-    private void GoToMainMenu()
+    private void GoToMainMenu() 
     {
         GetTree().ChangeSceneToFile("res://UI/HUD_MainMenu/MainMenu.tscn");
     }
