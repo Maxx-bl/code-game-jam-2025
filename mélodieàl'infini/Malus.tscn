@@ -41,11 +41,11 @@ _data = {
 
 [node name="Malus" type="Node2D"]
 
-[node name="Wp6717971" type="Sprite2D" parent="."]
+[node name="Malus" type="Sprite2D" parent="."]
 position = Vector2(282, 107)
 texture = ExtResource("1_w4dib")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Wp6717971"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Malus"]
 libraries = {
 "": SubResource("AnimationLibrary_g5j80")
 }
