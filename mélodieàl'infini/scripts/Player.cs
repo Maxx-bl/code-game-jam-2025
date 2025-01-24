@@ -29,26 +29,20 @@ public partial class Player : CharacterBody2D
 			_targetPosition = GetGlobalMousePosition();
 		}
 
-		if (@event is InputEventMouseButton eventMouseClick && eventMouseClick.Pressed)
-		{
-			_targetPosition = GetGlobalMousePosition();
-			_isMoving = true;
+		if (@event is InputEventMouseButton eventMouseClick && eventMouseClick.Pressed){
+		 	_targetPosition = GetGlobalMousePosition();
+		 	_isMoving = true;
 		}
-		else if (@event is InputEventMouseButton eventMouseClicke && !eventMouseClicke.Pressed)
-		{
+		else if (@event is InputEventMouseButton eventMouseClicke && !eventMouseClicke.Pressed){
 			_isMoving = false;
-			Speed = 0f;
 		}
 	}
 
-	public override void _PhysicsProcess(double delta)
-	{
-		if (_isMoving)
-		{
+	public override void _PhysicsProcess(double delta){
+		if (_isMoving){
 			Vector2 move = _targetPosition - Position;
-			if (move.Length() > 10f)
-			{
-				Velocity = move.Normalized() * Speed * (float)delta;
+			if (move.Length() > 10f){
+				Velocity = move.Normalized() * Speed;
 				MoveAndCollide(Velocity);
 			}
 		}
