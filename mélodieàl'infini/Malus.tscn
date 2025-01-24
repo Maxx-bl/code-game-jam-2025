@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://va3odt2al3dg"]
 
-[ext_resource type="Texture2D" uid="uid://dvc884u6jaiyy" path="res://Malus.webp" id="1_w4dib"]
+[ext_resource type="Texture2D" uid="uid://dvc884u6jaiyy" path="res://asset/Malus.webp" id="1_w4dib"]
 
 [sub_resource type="Animation" id="Animation_sdr0h"]
 resource_name = "Malus"

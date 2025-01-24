@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxxr2svr2hx3b"
-path="res://.godot/imported/heart shattered.webp-9906bdf7fe7ae52d77061e8bf6306438.ctex"
+uid="uid://b7cmneex0ir05"
+path="res://.godot/imported/lifebar_16x16.webp-f2268b377499d2e99408b6b02a109dc1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://heart shattered.webp"
-dest_files=["res://.godot/imported/heart shattered.webp-9906bdf7fe7ae52d77061e8bf6306438.ctex"]
+source_file="res://asset/lifebar_16x16.webp"
+dest_files=["res://.godot/imported/lifebar_16x16.webp-f2268b377499d2e99408b6b02a109dc1.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvc884u6jaiyy"
-path="res://.godot/imported/Malus.webp-558dbd8812a78882edbefc698f372be7.ctex"
+uid="uid://bd1qwtjycw1x5"
+path="res://.godot/imported/Bonus.webp-80f66ba5c97b9d58b0052cbe93a9661e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Malus.webp"
-dest_files=["res://.godot/imported/Malus.webp-558dbd8812a78882edbefc698f372be7.ctex"]
+source_file="res://asset/Bonus.webp"
+dest_files=["res://.godot/imported/Bonus.webp-80f66ba5c97b9d58b0052cbe93a9661e.ctex"]
 
 [params]
 

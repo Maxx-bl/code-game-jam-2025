@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvdn4h0ofw0dl"
-path="res://.godot/imported/ParticuleRouge.webp-bdea9686ce68f596035da8c4a6244973.ctex"
+uid="uid://bxxr2svr2hx3b"
+path="res://.godot/imported/heart shattered.webp-f14f2ecb7590b1369614fc51678389c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ParticuleRouge.webp"
-dest_files=["res://.godot/imported/ParticuleRouge.webp-bdea9686ce68f596035da8c4a6244973.ctex"]
+source_file="res://asset/heart shattered.webp"
+dest_files=["res://.godot/imported/heart shattered.webp-f14f2ecb7590b1369614fc51678389c3.ctex"]
 
 [params]
 

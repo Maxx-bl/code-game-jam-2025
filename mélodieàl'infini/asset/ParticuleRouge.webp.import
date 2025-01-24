@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd1qwtjycw1x5"
-path="res://.godot/imported/Bonus.webp-5fccbd6555c1dee918e1fb1035272ef2.ctex"
+uid="uid://bvdn4h0ofw0dl"
+path="res://.godot/imported/ParticuleRouge.webp-88d804628fcda38b11a2c50374b88adf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bonus.webp"
-dest_files=["res://.godot/imported/Bonus.webp-5fccbd6555c1dee918e1fb1035272ef2.ctex"]
+source_file="res://asset/ParticuleRouge.webp"
+dest_files=["res://.godot/imported/ParticuleRouge.webp-88d804628fcda38b11a2c50374b88adf.ctex"]
 
 [params]
 

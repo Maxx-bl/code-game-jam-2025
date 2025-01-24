@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://216qdq22w2ff"
-path="res://.godot/imported/note_de_musique.webp-1a8a1919e5b47f9668fb356f4f002ac1.ctex"
+uid="uid://cm2ee4rwatnmm"
+path="res://.godot/imported/Speaker_Icon.png-5767fb511223362fd7f6646a69e0144c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://note_de_musique.webp"
-dest_files=["res://.godot/imported/note_de_musique.webp-1a8a1919e5b47f9668fb356f4f002ac1.ctex"]
+source_file="res://asset/Speaker_Icon.png"
+dest_files=["res://.godot/imported/Speaker_Icon.png-5767fb511223362fd7f6646a69e0144c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7cmneex0ir05"
-path="res://.godot/imported/lifebar_16x16.webp-e3bc5fb338fa267d6162872f14282145.ctex"
+uid="uid://dvc884u6jaiyy"
+path="res://.godot/imported/Malus.webp-06c1d27c1b1aa7c0c5557ff6fb773984.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://lifebar_16x16.webp"
-dest_files=["res://.godot/imported/lifebar_16x16.webp-e3bc5fb338fa267d6162872f14282145.ctex"]
+source_file="res://asset/Malus.webp"
+dest_files=["res://.godot/imported/Malus.webp-06c1d27c1b1aa7c0c5557ff6fb773984.ctex"]
 
 [params]
 
