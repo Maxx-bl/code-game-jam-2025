@@ -14,15 +14,31 @@ public partial class obstacle : StaticBody2D
 	{
 	}
 
-	public void show_obstacle(){
+	public void show_obstacle()
+	{
 		Show();
 		// enable collision
 		GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
 	}
 
-	public void hide_obstacle(){
+	public void hide_obstacle()
+	{
 		Hide();
 		// disable collision
 		GetNode<CollisionShape2D>("CollisionShape2D").Disabled = true;
+	}
+
+	public void _on_area_2d_area_entered(Area2D area)
+	{
+		if (area.GetParent().IsInGroup("enemy"))
+		{
+			area.GetParent().QueueFree();
+			//Animation destruction ennemi
+		} 
+		if (area.GetParent().IsInGroup("player"))
+		{
+			hide_obstacle();
+			area.GetParent().GetParent().GetNode<Player>("player").CollideWithEnemy();
+		} 
 	}
 }
