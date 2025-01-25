@@ -7,21 +7,21 @@ public partial class PowerUp : StaticBody2D
 	Map map;
 	GameManager gm;
 	AudioStreamPlayer asp;
-	CanvasLayer animCanva;
 	AnimationPlayer ap;
 	Player p;
 	int pupType;
+
 	public override void _Ready()
 	{
 		map = GetParent<Map>();
 		asp = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
-		// animCanva = GetNode<CanvasLayer>("CanvasLayer");
-		// ap = animCanva.GetNode<AnimationPlayer>("Bonus/Bonus/AnimationPlayer");
-		// animCanva.Hide();
+		ap = GetNode<AnimationPlayer>("BonusExplosion/AnimationPlayer");
 		p = GetParent().GetNode<Player>("player");
 		Random ran = new Random();
 		pupType = ran.Next(0, 3);
 		gm = GetParent().GetNode<GameManager>("GameManager");
+		ap.Stop();
+		GetNode<Node2D>("BonusExplosion").Hide();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,17 +42,23 @@ public partial class PowerUp : StaticBody2D
 			} else if (pupType == 2) {
 				gm.EnableSlow();
 			}
-			// animCanva.Show();
-			// ap.Play("Malus");
+			GetNode<Node2D>("BonusExplosion").Show();
+			ap.Play("Explosion!");
 
 			asp.Play();
 			map.PuP.spawnCount--;
+			GetNode<Sprite2D>("Sprite2D").QueueFree();
 			GetNode<Area2D>("Area2D").QueueFree();
 		}
 	}
 
 	public void _on_audio_stream_player_finished()
 	{
+		Destroy();
+	}
+
+	public async void Destroy() {
+		await ToSignal(GetTree().CreateTimer(2f), "timeout");
 		QueueFree();
 	}
 }
