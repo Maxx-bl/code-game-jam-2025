@@ -106,6 +106,7 @@ public partial class Player : CharacterBody2D
             if (Speed < _maxSpeed)
             {
                 Speed += 50f;
+                GetParent<Map>().glowMap.SpeedScale+=0.05f;
             }
         }
     }

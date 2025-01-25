@@ -8,6 +8,7 @@ public partial class Map : Node2D
 	private MusicManager mm;
 	public Player p;
 	public PowerUpSpawner PuP;
+	public AnimationPlayer glowMap;
 
 	private float minPitch = 1.0f;
 	private float maxPitch = 7.0f;
@@ -34,7 +35,10 @@ public partial class Map : Node2D
 
 		PuP = GetNode<PowerUpSpawner>("PowerUpSpawner");
 
+		glowMap = GetNode<AnimationPlayer>("path/AnimationPlayer");
+
 		GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
+		GetNode<AnimationPlayer>("path/AnimationPlayer").Play("Glow anim");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

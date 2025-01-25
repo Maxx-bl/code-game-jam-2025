@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdjfv1cahl0gd"]
+[gd_scene load_steps=7 format=3 uid="uid://cdjfv1cahl0gd"]
 
 [ext_resource type="Script" path="res://scripts/Player.cs" id="1_gjykm"]
 [ext_resource type="Texture2D" uid="uid://bin0y17rj0xq8" path="res://assets/player.png" id="2_qlm6s"]
 [ext_resource type="PackedScene" uid="uid://5rn14finefk0" path="res://scenes/hud.tscn" id="3_vw5jh"]
+[ext_resource type="PackedScene" uid="uid://cjxkj441bbkw4" path="res://Hurt Effect.tscn" id="4_g1q0c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1s3y"]
 size = Vector2(106, 127)
@@ -36,3 +37,5 @@ shape = SubResource("RectangleShape2D_ie7wv")
 
 [node name="hud" parent="." instance=ExtResource("3_vw5jh")]
 top_level = true
+
+[node name="Hurt Effect" parent="." instance=ExtResource("4_g1q0c")]
