@@ -23,10 +23,6 @@ public partial class RetryMenu : Control
 		deathAnim.PlayDeathFromRetryMenu();
 	}
 
-	public async void WaitTime(float time) {
-		await ToSignal(GetTree().CreateTimer(time), "timeout");
-	}
-
 	public void _on_texture_button_retry_button_up()
 	{
 		GetTree().ChangeSceneToFile("res://scenes/map.tscn");

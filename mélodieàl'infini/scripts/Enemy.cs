@@ -18,6 +18,7 @@ public partial class Enemy : CharacterBody2D
 
 	Sprite2D sprite;
 	AudioStreamPlayer asp;
+	GameManager gm;
 
 	public override void _Ready(){
 		RandomNumberGenerator rng = new RandomNumberGenerator();
@@ -34,11 +35,14 @@ public partial class Enemy : CharacterBody2D
 		sprite.Texture = tex;
 
 		asp = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
+
+		gm = GetParent().GetNode<GameManager>("GameManager");
 	}
 
 	public override void _Process(double delta)
 	{
 		speed = pStats.Speed * 0.6f;
+		if (gm.GetPowerUpSlow())  speed = speed/10;
 		if (stupid){
 			if (player == null){
 				return;
@@ -69,11 +73,14 @@ public partial class Enemy : CharacterBody2D
 	}
 
 	public void _on_area_2d_area_entered(Area2D area) {
-		if (area.GetParent().IsInGroup("player")) {
+		if (area.IsInGroup("player")) {
 			pStats.CollideWithEnemy();
 			asp.Play();
 			GetNode<CollisionShape2D>("CollisionShape2D").QueueFree();
 			GetNode<Area2D>("Area2D").QueueFree();
+		}
+		if (area.IsInGroup("explosion")) {
+			QueueFree();
 		}
 	}
 

@@ -14,6 +14,8 @@ public partial class Player : CharacterBody2D
     private AnimationPlayer deathAnim;
     private Node2D deathNode;
 
+    Area2D areaShield;
+
     public int Hp;
 
     Vector2 ScreenSize;
@@ -29,6 +31,8 @@ public partial class Player : CharacterBody2D
         deathAnim.Stop();
         deathNode = hud.GetNode<Node2D>("CanvasLayer/Death");
         deathNode.Hide();
+        areaShield = GetNode<Area2D>("AreaExplosion");
+        DisableShield();
     }
 
     public override void _Input(InputEvent @event)
@@ -135,4 +139,16 @@ public partial class Player : CharacterBody2D
         Control retry = retryMenu.Instantiate<Control>();
         GetParent().AddChild(retry);
     }
+
+    public async void EnableShield() {
+        areaShield.Show();
+        areaShield.AddToGroup("explosion");
+        await ToSignal(GetTree().CreateTimer(4f), "timeout");
+        DisableShield();
+    }
+
+    public void DisableShield() {
+        areaShield.Hide();
+        areaShield.RemoveFromGroup("explosion");
+    }   
 }

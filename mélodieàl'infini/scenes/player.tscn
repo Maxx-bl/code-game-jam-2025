@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdjfv1cahl0gd"]
+[gd_scene load_steps=9 format=3 uid="uid://cdjfv1cahl0gd"]
 
 [ext_resource type="Script" path="res://scripts/Player.cs" id="1_gjykm"]
 [ext_resource type="Texture2D" uid="uid://bin0y17rj0xq8" path="res://assets/player.png" id="2_qlm6s"]
 [ext_resource type="PackedScene" uid="uid://5rn14finefk0" path="res://scenes/hud.tscn" id="3_vw5jh"]
 [ext_resource type="PackedScene" uid="uid://cjxkj441bbkw4" path="res://Hurt Effect.tscn" id="4_g1q0c"]
+[ext_resource type="Texture2D" uid="uid://dubl8dgp3qttb" path="res://assets/shield.png" id="5_nfdb2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1s3y"]
 size = Vector2(106, 127)
@@ -11,7 +12,10 @@ size = Vector2(106, 127)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ie7wv"]
 size = Vector2(118, 137)
 
-[node name="player" type="CharacterBody2D" groups=["player"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_xyqpb"]
+radius = 383.0
+
+[node name="player" type="CharacterBody2D"]
 position = Vector2(142, 116)
 script = ExtResource("1_gjykm")
 
@@ -29,7 +33,7 @@ zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(20, 3.5)
@@ -39,3 +43,13 @@ shape = SubResource("RectangleShape2D_ie7wv")
 top_level = true
 
 [node name="Hurt Effect" parent="." instance=ExtResource("4_g1q0c")]
+
+[node name="AreaExplosion" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaExplosion"]
+shape = SubResource("CircleShape2D_xyqpb")
+
+[node name="Sprite2D" type="Sprite2D" parent="AreaExplosion"]
+position = Vector2(-16, -1)
+scale = Vector2(1.8, 1.8)
+texture = ExtResource("5_nfdb2")

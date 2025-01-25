@@ -30,6 +30,7 @@ player=""
 enemy=""
 obstacle=""
 powerup=""
+explosion=""
 
 [input]
 

@@ -8,6 +8,7 @@ public partial class GameManager : Node
 	public int Score { get; set; }
 
 	private double elapsedTime;
+	private bool slowPowerUp = false;
 
 	public override void _Ready()
 	{
@@ -27,5 +28,19 @@ public partial class GameManager : Node
     public void IncrementScore()
 	{
 		Score++;
+	}
+
+	public bool GetPowerUpSlow() {
+		return slowPowerUp;
+	}
+	
+	public async void EnableSlow() {
+		slowPowerUp = true;
+		await ToSignal(GetTree().CreateTimer(5f), "timeout");
+		DisableSlow();
+	}
+
+	public void DisableSlow() {
+		slowPowerUp = false;
 	}
 }
