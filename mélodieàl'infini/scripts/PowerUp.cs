@@ -5,9 +5,11 @@ public partial class PowerUp : StaticBody2D
 {
 
 	Map map;
+	AudioStreamPlayer asp;
 	public override void _Ready()
 	{
 		map = GetParent<Map>();
+		asp = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,9 +21,14 @@ public partial class PowerUp : StaticBody2D
 	{
 		if (area.GetParent().IsInGroup("player"))
 		{
+			asp.Play();
 			map.PuP.spawnCount--;
 			map.p.Hp++;
-			QueueFree();
+			GetNode<Area2D>("Area2D").QueueFree();
 		}
+	}
+
+	public void _on_audio_stream_player_finished() {
+		QueueFree();
 	}
 }

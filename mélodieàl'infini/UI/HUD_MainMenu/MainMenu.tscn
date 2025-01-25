@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://xltorn07rd4i"]
+[gd_scene load_steps=15 format=3 uid="uid://xltorn07rd4i"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_u1gt2"]
 [ext_resource type="Texture2D" uid="uid://dv3vijntgcn5l" path="res://UI/HUD_MainMenu/HUD_MM_Button/HUD_MM_B_Play.png" id="2_tusmj"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://bywvdx6vr50iq" path="res://UI/HUD_MainMenu/HUD_MM_StudionNameBackground.png" id="10_31oo6"]
 [ext_resource type="Texture2D" uid="uid://dakkdn18g0hax" path="res://UI/HUD_MainMenu/HUD_MM_Winner/HUD_MM_W_Background.png" id="11_n4evn"]
 [ext_resource type="Texture2D" uid="uid://baku45023a0po" path="res://UI/HUD_MainMenu/HUD_MM_Winner/HUD_MM_W_Highlight.png" id="12_fm3s6"]
+[ext_resource type="AudioStream" uid="uid://6md4iclc0rvr" path="res://assets/music/menutrackloop.wav" id="13_8d5n6"]
+[ext_resource type="Script" path="res://scripts/AudioStreamPlayerMenu.cs" id="14_wdnd7"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -114,6 +116,12 @@ texture = ExtResource("12_fm3s6")
 layout_mode = 2
 texture = ExtResource("12_fm3s6")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_8d5n6")
+autoplay = true
+script = ExtResource("14_wdnd7")
+
 [connection signal="button_up" from="Button/ButtonPlay" to="." method="_on_button_play_button_up"]
 [connection signal="button_up" from="Button/ButtonCredits" to="." method="_on_button_credits_button_up"]
 [connection signal="button_up" from="Button/ButtonQuit" to="." method="_on_button_quit_button_up"]
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]

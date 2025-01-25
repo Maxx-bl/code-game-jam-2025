@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://vgc6o5hj7sir"]
+[gd_scene load_steps=5 format=3 uid="uid://vgc6o5hj7sir"]
 
 [ext_resource type="Texture2D" uid="uid://ddfmkbt4bcrnd" path="res://assets/PowerUp.png" id="1_aogcp"]
 [ext_resource type="Script" path="res://scripts/PowerUp.cs" id="1_i4k1m"]
+[ext_resource type="AudioStream" uid="uid://clcnqf0qogfmy" path="res://assets/music/powerup.wav" id="3_0nbg4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfmo0"]
 size = Vector2(185, 229)
@@ -20,4 +21,9 @@ texture = ExtResource("1_aogcp")
 position = Vector2(24.5, -30.5)
 shape = SubResource("RectangleShape2D_vfmo0")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_0nbg4")
+volume_db = 5.0
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
