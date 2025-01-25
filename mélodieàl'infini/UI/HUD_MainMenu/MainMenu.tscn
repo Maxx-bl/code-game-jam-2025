@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://xltorn07rd4i"]
+[gd_scene load_steps=12 format=3 uid="uid://xltorn07rd4i"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_u1gt2"]
+[ext_resource type="Texture2D" uid="uid://lvq33bqyyl4v" path="res://assets/background_menu.jpg" id="2_0n0dg"]
 [ext_resource type="Texture2D" uid="uid://dv3vijntgcn5l" path="res://UI/HUD_MainMenu/HUD_MM_Button/HUD_MM_B_Play.png" id="2_tusmj"]
 [ext_resource type="Texture2D" uid="uid://b0k2e47n67hgf" path="res://UI/HUD_MainMenu/HUD_MM_ButtonClicked/HUD_MM_BC_Play.png" id="3_cirth"]
 [ext_resource type="Texture2D" uid="uid://x6aeedg18xcb" path="res://UI/HUD_MainMenu/HUD_MM_Button/HUD_MM_B_Credits.png" id="6_1s0x4"]
@@ -20,11 +21,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u1gt2")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(4.10194e-05, 0.0277008, 0.187741, 1)
+texture = ExtResource("2_0n0dg")
 
 [node name="Button" type="VBoxContainer" parent="."]
 layout_mode = 1
