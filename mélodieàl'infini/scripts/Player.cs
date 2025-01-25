@@ -10,6 +10,9 @@ public partial class Player : CharacterBody2D
     public float Speed;
     private double _elapsedTime;
     private bool retryMenuOn = false;
+    private Control hud;
+    private AnimationPlayer deathAnim;
+    private Node2D deathNode;
 
     public int Hp;
 
@@ -21,6 +24,11 @@ public partial class Player : CharacterBody2D
         _targetPosition = Position;
         ScreenSize = GetViewportRect().Size;
         Hp = 3;
+        hud = GetNode<Control>("hud");
+        deathAnim = hud.GetNode<AnimationPlayer>("CanvasLayer/Death/Lifebar16x16/AnimationPlayer");
+        deathAnim.Stop();
+        deathNode = hud.GetNode<Node2D>("CanvasLayer/Death");
+        deathNode.Hide();
     }
 
     public override void _Input(InputEvent @event)
@@ -106,8 +114,9 @@ public partial class Player : CharacterBody2D
     {
         if (Hp > 1)
         {
+            deathNode.Show();
             Hp--;
-            // Animation perte HP
+            deathAnim.Play("Death");
         }
         else
         {

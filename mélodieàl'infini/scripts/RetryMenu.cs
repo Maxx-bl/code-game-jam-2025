@@ -8,6 +8,9 @@ public partial class RetryMenu : Control
 	Label score;
 	MusicManager mm;
 
+	ColorRect animRect;
+	DeathAnim deathAnim;
+
 	public override void _Ready()
 	{
 		score = GetNode<Label>("CanvasLayer/Text/Label");
@@ -15,6 +18,13 @@ public partial class RetryMenu : Control
 		score.Text = gm.Score.ToString();
 		mm = GetParent().GetNode<MusicManager>("MusicManager");
 		mm.asp.Stop();
+		animRect = GetNode<ColorRect>("CanvasLayer/AnimRect");
+		deathAnim = animRect.GetNode<DeathAnim>("Death");
+		deathAnim.PlayDeathFromRetryMenu();
+	}
+
+	public async void WaitTime(float time) {
+		await ToSignal(GetTree().CreateTimer(time), "timeout");
 	}
 
 	public void _on_texture_button_retry_button_up()

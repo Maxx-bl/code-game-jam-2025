@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1tptrs4iwjgw"]
+[gd_scene load_steps=6 format=3 uid="uid://b1tptrs4iwjgw"]
 
 [ext_resource type="Script" path="res://scripts/Map.cs" id="1_c2q2k"]
 [ext_resource type="Texture2D" uid="uid://bjg5hnuv4udtk" path="res://assets/infinite.svg" id="2_agi0o"]
 [ext_resource type="PackedScene" uid="uid://bavt0ir0uuj8p" path="res://scenes/enemy_spawner.tscn" id="3_0glla"]
 [ext_resource type="Script" path="res://PowerUpSpawner.cs" id="4_lnl52"]
+[ext_resource type="AudioStream" uid="uid://cp3ayw0xts3m6" path="res://assets/sfx/menuselect.wav" id="5_tehiv"]
 
 [node name="map" type="Node2D"]
 script = ExtResource("1_c2q2k")
@@ -34,3 +35,6 @@ script = ExtResource("4_lnl52")
 
 [node name="Node" type="Node2D" parent="."]
 position = Vector2(5810, -457)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_tehiv")

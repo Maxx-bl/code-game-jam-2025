@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4edyn0rt4gkp"]
+[gd_scene load_steps=9 format=3 uid="uid://b4edyn0rt4gkp"]
 
 [ext_resource type="Texture2D" uid="uid://b7cmneex0ir05" path="res://asset/lifebar_16x16.webp" id="1_2vjoi"]
+[ext_resource type="Script" path="res://scripts/DeathAnim.cs" id="1_8ovvp"]
 [ext_resource type="Texture2D" uid="uid://bxxr2svr2hx3b" path="res://asset/heart shattered.webp" id="2_bwqat"]
 [ext_resource type="Texture2D" uid="uid://3tb0f8rcy53q" path="res://asset/heart particule.webp" id="3_t8jwx"]
 
@@ -172,6 +173,7 @@ turbulence_enabled = true
 
 [node name="Death" type="Node2D"]
 self_modulate = Color(25, 1, 22, 1)
+script = ExtResource("1_8ovvp")
 
 [node name="Lifebar16x16" type="Sprite2D" parent="."]
 position = Vector2(278, 203)
@@ -198,3 +200,5 @@ position = Vector2(269, 162)
 amount = 32
 process_material = SubResource("ParticleProcessMaterial_tpx5v")
 texture = ExtResource("3_t8jwx")
+
+[connection signal="animation_finished" from="Lifebar16x16/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://5rn14finefk0"]
+[gd_scene load_steps=3 format=3 uid="uid://5rn14finefk0"]
 
 [ext_resource type="Script" path="res://scripts/Hud.cs" id="1_7glir"]
+[ext_resource type="PackedScene" uid="uid://b4edyn0rt4gkp" path="res://Death.tscn" id="2_8b6h7"]
 
 [node name="hud" type="Control"]
 layout_mode = 3
@@ -32,3 +33,7 @@ offset_bottom = 119.0
 theme_override_colors/font_color = Color(1, 0.86984, 0.426137, 1)
 theme_override_font_sizes/font_size = 50
 text = "Health: 1"
+
+[node name="Death" parent="CanvasLayer" instance=ExtResource("2_8b6h7")]
+position = Vector2(-50, 100)
+scale = Vector2(0.8, 0.8)

@@ -33,6 +33,8 @@ public partial class Map : Node2D
 		p = GetNode<Player>("player");
 
 		PuP = GetNode<PowerUpSpawner>("PowerUpSpawner");
+
+		GetNode<AudioStreamPlayer>("AudioStreamPlayer").Play();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
