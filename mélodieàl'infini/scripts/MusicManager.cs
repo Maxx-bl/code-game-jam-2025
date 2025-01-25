@@ -3,7 +3,7 @@ using System;
 
 public partial class MusicManager : Node
 {
-	private AudioStreamPlayer asp;
+	public AudioStreamPlayer asp;
 
     public override void _Ready()
     {

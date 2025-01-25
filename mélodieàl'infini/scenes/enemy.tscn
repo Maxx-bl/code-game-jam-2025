@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1xdhyv7etm2a"]
+[gd_scene load_steps=6 format=3 uid="uid://d1xdhyv7etm2a"]
 
 [ext_resource type="Script" path="res://scripts/Enemy.cs" id="1_f2cbd"]
 [ext_resource type="Texture2D" uid="uid://w6fb4oicn3gv" path="res://assets/enemy1.png" id="2_rxr8n"]
+[ext_resource type="AudioStream" uid="uid://d1jrvweut253j" path="res://assets/sfx/hurt.wav" id="3_xk771"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0aush"]
 size = Vector2(68, 97)
@@ -27,4 +28,9 @@ shape = SubResource("RectangleShape2D_0aush")
 position = Vector2(0, 0.75)
 shape = SubResource("RectangleShape2D_d8x7t")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xk771")
+volume_db = 10.0
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

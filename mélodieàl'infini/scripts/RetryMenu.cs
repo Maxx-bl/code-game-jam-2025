@@ -6,12 +6,15 @@ public partial class RetryMenu : Control
 
 	GameManager gm;
 	Label score;
+	MusicManager mm;
 
 	public override void _Ready()
 	{
 		score = GetNode<Label>("CanvasLayer/Text/Label");
 		gm = GetParent().GetNode<GameManager>("GameManager");
 		score.Text = gm.Score.ToString();
+		mm = GetParent().GetNode<MusicManager>("MusicManager");
+		mm.asp.Stop();
 	}
 
 	public void _on_texture_button_retry_button_up()

@@ -17,6 +17,7 @@ public partial class Enemy : CharacterBody2D
 	Vector2 ScreenSize;
 
 	Sprite2D sprite;
+	AudioStreamPlayer asp;
 
 	public override void _Ready(){
 		RandomNumberGenerator rng = new RandomNumberGenerator();
@@ -31,6 +32,8 @@ public partial class Enemy : CharacterBody2D
 		Random ran = new Random();
 		Texture2D tex = GD.Load<Texture2D>("res://assets/enemy" + (ran.Next(0, 2) + 1).ToString() + ".png");
 		sprite.Texture = tex;
+
+		asp = GetNode<AudioStreamPlayer>("AudioStreamPlayer");
 	}
 
 	public override void _Process(double delta)
@@ -67,10 +70,15 @@ public partial class Enemy : CharacterBody2D
 
 	public void _on_area_2d_area_entered(Area2D area) {
 		if (area.GetParent().IsInGroup("player")) {
-			QueueFree();
 			pStats.CollideWithEnemy();
-			//Animation destruction ennemi
+			asp.Play();
+			GetNode<CollisionShape2D>("CollisionShape2D").QueueFree();
+			GetNode<Area2D>("Area2D").QueueFree();
 		}
+	}
+
+	public void _on_audio_stream_player_finished() {
+		QueueFree();
 	}
 
 }
