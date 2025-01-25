@@ -35,7 +35,8 @@ public partial class PowerUp : StaticBody2D
 		{
 			if (pupType == 0)
 			{
-				map.p.Hp++;
+				map.p.Hp+=2;
+				p.GetNode<Hud>("hud").ShowHeart();
 			} else if (pupType == 1) {
 				p.EnableShield();
 			} else if (pupType == 2) {

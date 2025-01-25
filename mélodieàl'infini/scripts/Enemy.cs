@@ -42,7 +42,7 @@ public partial class Enemy : CharacterBody2D
 	public override void _Process(double delta)
 	{
 		speed = pStats.Speed * 0.6f;
-		if (gm.GetPowerUpSlow())  speed = speed/10;
+		if (gm.GetPowerUpSlow())  speed /= 10;
 		if (stupid){
 			if (player == null){
 				return;

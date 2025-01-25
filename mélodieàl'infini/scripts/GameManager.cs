@@ -36,7 +36,7 @@ public partial class GameManager : Node
 	
 	public async void EnableSlow() {
 		slowPowerUp = true;
-		await ToSignal(GetTree().CreateTimer(5f), "timeout");
+		await ToSignal(GetTree().CreateTimer(8f), "timeout");
 		DisableSlow();
 	}
 

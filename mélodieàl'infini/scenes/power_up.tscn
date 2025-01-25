@@ -8,6 +8,7 @@
 size = Vector2(185, 229)
 
 [node name="PowerUp" type="StaticBody2D" groups=["powerup"]]
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_i4k1m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
