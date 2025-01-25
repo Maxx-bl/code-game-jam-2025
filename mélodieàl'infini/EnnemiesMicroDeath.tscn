@@ -7,7 +7,7 @@
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f64km"]
 particle_flag_disable_z = true
 emission_shape = 3
-emission_box_extents = Vector3(200, 100, 0)
+emission_box_extents = Vector3(100, 100, 0)
 angle_min = -200.0
 angle_max = 200.0
 gravity = Vector3(0, 98, 0)
@@ -15,8 +15,9 @@ gravity = Vector3(0, 98, 0)
 [node name="EnnemiesMicroDeath" type="Node2D"]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+modulate = Color(0, 100, 0, 1)
 material = SubResource("CanvasItemMaterial_k0a6l")
-amount = 32
+amount = 24
 sub_emitter = NodePath(".")
 process_material = SubResource("ParticleProcessMaterial_f64km")
 texture = ExtResource("1_1jrm6")
