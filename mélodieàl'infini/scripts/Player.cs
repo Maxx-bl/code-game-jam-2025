@@ -9,6 +9,7 @@ public partial class Player : CharacterBody2D
     public float _maxSpeed = 6000f;
     public float Speed;
     private double _elapsedTime;
+    private bool retryMenuOn = false;
 
     public int Hp;
 
@@ -110,12 +111,18 @@ public partial class Player : CharacterBody2D
         }
         else
         {
-            CallDeferred("GoToMainMenu");
+            if (!retryMenuOn)
+            {
+                retryMenuOn = true;
+                GoToRetryMenu();
+            }
         }
     }
 
-    private void GoToMainMenu() 
+    private void GoToRetryMenu()
     {
-        GetTree().ChangeSceneToFile("res://UI/HUD_MainMenu/MainMenu.tscn");
+        PackedScene retryMenu = GD.Load<PackedScene>("res://HUD_RetryMenu/RetryMenu.tscn");
+        Control retry = retryMenu.Instantiate<Control>();
+        GetParent().AddChild(retry);
     }
 }

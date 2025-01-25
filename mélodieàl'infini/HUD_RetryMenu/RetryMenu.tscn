@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://c16nsdfqionn5"]
+
+[ext_resource type="Script" path="res://scripts/RetryMenu.cs" id="1_8w0wx"]
+[ext_resource type="Texture2D" uid="uid://dtx4ew7g7gafs" path="res://HUD_RetryMenu/HUD_RM_Button/HUD_RM_B_Retry.png" id="2_it1yt"]
+[ext_resource type="Texture2D" uid="uid://dggnb0pysnanq" path="res://HUD_RetryMenu/HUD_RM_Button/HUD_RM_B_MM.png" id="4_g02v8"]
+[ext_resource type="Texture2D" uid="uid://c6xxqwtytfxjg" path="res://HUD_RetryMenu/HUD_RM_Text/HUD_RM_Text.png" id="5_af5cn"]
+
+[node name="RetryMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8w0wx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 758.0
+offset_top = 558.0
+offset_right = 1184.0
+offset_bottom = 902.0
+
+[node name="TextureButtonRetry" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_it1yt")
+
+[node name="TextureButtoMM" type="TextureButton" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_g02v8")
+
+[node name="Text" type="TextureRect" parent="CanvasLayer"]
+offset_left = 614.0
+offset_top = 235.0
+offset_right = 1356.0
+offset_bottom = 345.0
+texture = ExtResource("5_af5cn")
+
+[node name="Label" type="Label" parent="CanvasLayer/Text"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 150.0
+offset_right = 751.0
+offset_bottom = 281.0
+theme_override_font_sizes/font_size = 100
+text = "0"
+horizontal_alignment = 1
+
+[connection signal="button_up" from="CanvasLayer/VBoxContainer/TextureButtonRetry" to="." method="_on_texture_button_retry_button_up"]
+[connection signal="button_up" from="CanvasLayer/VBoxContainer/TextureButtoMM" to="." method="_on_texture_butto_mm_button_up"]
