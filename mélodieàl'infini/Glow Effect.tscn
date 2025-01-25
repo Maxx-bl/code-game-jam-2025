@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://gu6hvelahyxw"]
 
-[ext_resource type="Texture2D" uid="uid://btyrebkk2ea3" path="res://asset/icon.svg" id="1_72sq5"]
+[ext_resource type="Texture2D" uid="uid://btyrebkk2ea3" path="res://icon.svg" id="1_72sq5"]
 [ext_resource type="Texture2D" uid="uid://d3fep2j70ujwm" path="res://asset/map.png" id="2_76jot"]
 
 [sub_resource type="Animation" id="Animation_ldw8p"]
